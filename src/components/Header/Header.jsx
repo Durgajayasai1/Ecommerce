@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import './header.css'
 import { Container, Row } from 'reactstrap'
 import { motion } from 'framer-motion'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../../assets/images/eco-logo.png'
 import user_icon from '../../assets/images/user-icon.png'
 import { useSelector } from 'react-redux'
@@ -29,6 +29,7 @@ const Header = () => {
   const totalQuantity=useSelector(state=>state.cart.totalQuantity);
 
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   const stickyHeaderFunc = () => {
     if (headerRef.current) {
@@ -56,6 +57,10 @@ const Header = () => {
     else{
       console.error('menuRef is not yet initialized');
     }
+  }
+
+  const navigateToCart = () =>{
+    navigate("/cart");
   }
 
   return (
@@ -87,7 +92,7 @@ const Header = () => {
                 <i class="ri-heart-line"></i>
                 <span className="badge">1</span>
               </span>
-              <span className='cart__icon'>
+              <span className='cart__icon' onClick={navigateToCart}>
                 <i class="ri-shopping-bag-line"></i>
                 <span className="badge">{totalQuantity}</span>
               </span>

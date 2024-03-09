@@ -139,7 +139,7 @@ const ProductDetails = () => {
                           <div className="form__group">
                             <textarea ref={reviewMsg} rows={4} type="text" placeholder='Review message...' required />
                           </div>
-                          <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">Submit</motion.button>
+                          <motion.button whileTap={{ scale: 1.2 }} type='submit' className="buy__btn">Submit</motion.button>
                         </form>
                       </div>
                     </div>
