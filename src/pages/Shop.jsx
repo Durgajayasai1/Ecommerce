@@ -45,6 +45,7 @@ const Shop = () => {
                   <option value="Vegetables">Vegetables</option>
                   <option value="fruits">Fruits</option>
                   <option value="grains">Grains</option>
+                  <option value="Sea">Sea Food</option>
                 </select>
               </div>
             </Col>

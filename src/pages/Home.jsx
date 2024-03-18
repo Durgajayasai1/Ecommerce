@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import products from '../assets/data/products'
+import products from '../assets/data/shopdata'
 import Helmet from '../components/Helmet/Helmet'
 import { Container, Row, Col } from 'reactstrap'
 import Hero from '../assets/images/hero-rip.png'
@@ -20,10 +20,10 @@ const Home = () => {
   const year = new Date().getFullYear();
 
   useEffect(() => {
-    const filteredTrendingProducts = products.filter(item => item.category === 'Organic');
+    const filteredTrendingProducts = products.filter(item => item.category === 'fruits');
     const filteredBestSalesProducts = products.filter(item => item.category === 'Vegetables');
-    const filterednew = products.filter(item => item.category === 'new');
-    const filteredpopular = products.filter(item => item.category === 'new');
+    const filterednew = products.filter(item => item.category === 'grains');
+    const filteredpopular = products.filter(item => item.category === 'sea');
 
     setTrendingProducts(filteredTrendingProducts);
     setBestSalesProducts(filteredBestSalesProducts);
@@ -62,7 +62,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg='12' className='text-center mb-5'>
-              <h2 className='section__title' style={{ userSelect: "none" }}>Hot Sellers</h2>
+              <h2 className='section__title' style={{ userSelect: "none" }}>Fruit Burst</h2>
             </Col>
             <ProductList data={trendingProducts} />
           </Row>
@@ -73,7 +73,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg='12' className='text-center mb-5'>
-              <h2 className='section__title' style={{ userSelect: "none" }}>Best Sales</h2>
+              <h2 className='section__title' style={{ userSelect: "none" }}>Veggie Verse</h2>
             </Col>
             <ProductList data={bestSalesProducts} />
           </Row>
@@ -103,7 +103,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg='12' className='text-center mb-5'>
-              <h2 className='section__title'>New Arrivals</h2>
+              <h2 className='section__title'>Seed Spectrum</h2>
             </Col>
             <ProductList data={newArrivals} />
           </Row>
@@ -114,7 +114,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg='12' className='text-center mb-5'>
-              <h2 className='section__title'>Popluar in Category</h2>
+              <h2 className='section__title'>Shell Shimmer</h2>
             </Col>
             <ProductList data={popularproducts} />
           </Row>
